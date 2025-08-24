@@ -1,0 +1,13 @@
+[Unit]
+Descripton=updates cached ical files
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=webcal-cache
+Group=webcal-cache
+ExecStart=/usr/bin/bash /home/webcal-cache/webcal-cache-update.sh
+
+[Install]
+WantedBy=multi-user.target

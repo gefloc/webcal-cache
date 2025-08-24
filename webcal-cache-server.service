@@ -1,0 +1,13 @@
+[Unit]
+Descripton=http Server for cached ical files
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=webcal-cache
+Group=webcal-cache
+ExecStart=/usr/sbin/lighttpd -D -f /home/webcal-cache/webcal-cache-server.conf
+
+[Install]
+WantedBy=multi-user.target
