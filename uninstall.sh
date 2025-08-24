@@ -1,5 +1,8 @@
 #! /bin/bash
 
+#delete webcal-cache-ls
+rm /opt/bin/webcal-cache-ls
+
 #stop & delete services
 systemctl stop webcal-cache-server
 systemctl stop webcal-cache-update

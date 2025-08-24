@@ -1,15 +1,9 @@
 #! /bin/bash
 
-calendars=(
-	"https://www.feiertage-deutschland.de/kalender-download/ics/feiertage-deutschland.ics"
-)
-
 #download ics files
-for c in "${calendars[@]}"; do
-	wget -P ~/ical/ "$c"
-done
+wget "https://www.feiertage-deutschland.de/kalender-download/ics/feiertage-deutschland.ics" -O ~/ical/example.ics
 
-#delete backups
+#delete ics file backups
 rm -f ~/ical/*.ics.1
 
 

@@ -1,0 +1,4 @@
+#! /bin/bash
+
+sudo -H -u webcal-cache bash -c 'ls -l ~/ical/'
+

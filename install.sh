@@ -10,8 +10,13 @@ cp webcal-cache-server.conf /home/webcal-cache/
 
 #copy programs
 cp --no-preserve=owner webcal-cache-update.sh /home/webcal-cache/
-chown webcal-cache:webcal-cache /home/webcal-cache/*
+chown webcal-cache:webcal-cache /home/webcal-cache/ -R
 chmod +x /home/webcal-cache/webcal-cache-update.sh
+
+#install webcal-cache-ls
+mkdir -p /opt/bin
+cp --no-preserve=owner webcal-cache-ls /opt/bin/
+chmod +x /opt/bin/webcal-cache-ls
 
 #copy systemd service files
 cp --no-preserve=owner webcal-cache-server.service webcal-cache-update.service webcal-cache-update.timer /etc/systemd/system
